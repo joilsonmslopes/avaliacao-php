@@ -12,5 +12,13 @@
         $sql->execute([$nome, $cor]);
     }
 
+    if(isset($_POST['inserir'])) {
+        $preco = $_POST['preco'];
+
+        $sql = $pdo->prepare("INSERT INTO `precos` VALUES (null,?)");
+
+        $sql->execute([$preco]);
+    }
+
     include('./views/footer.html');
 ?>
